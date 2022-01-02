@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ユルキのポートフォリオ</title>
+    <!-- Googleフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;700&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap"
+        rel="stylesheet">
+    <!-- ウェブフォントとして，Googleのマテリアルアイコンを用いる（https://google.github.io/material-design-icons/#icon-font-for-the-web） -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- favicon -->
+    <link rel="icon" href="./images/favicon/favicon.ico" id="favicon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon-180x180.png" />
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="assets/reset.css" />
+    <!-- スタイルシート -->
+    <link rel="stylesheet" href="assets/base.css" />
+    <link rel="stylesheet" href="assets/header.css" />
+    <!-- jQuery Google CDN（2021/05/08時点） -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- font-awesome (2021/05/08時点，製作者のアカウントKIT使用) -->
+    <script src="https://kit.fontawesome.com/940545e56d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <a href="./index.html" class="header-left">
+            <img class="logo" src="./images/site-tile-70x70.png" alt="ロゴ" />
+            <h1>ユルキのポートフォリオ</h1>
+        </a>
+        <div class="pc-menu">
+            <nav>
+                <ul class="s">
+                    <li class="nav-list">
+                        <a class="tw-link" href="https://twitter.com/WEB_YulukiTaiga" target="_blank" rel="noopener">
+                            <img src="./images/link-icon/tw-black.png" alt="" />
+                        </a>
+                    </li>
+                    <li class="nav-list"><a href="#">ブログ</a></li>
+                    <li class="nav-list to-form"><a>コンタクト</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="sp-menu">
+            <span class="material-icons" id="open">menu</span>
+        </div>
+    </header>
+    <div class="overlay">
+        <span class="material-icons" id="close">close</span>
+        <nav>
+            <ul>
+                <li>
+                    <a href="https://twitter.com/WEB_YulukiTaiga" target="_blank" rel="noopener">Twitter</a>
+                </li>
+                <li><a href="#">ブログ</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSenhM26igODtcfldIR5XXBH_gjvZIChtp4bf8toyxo4SHpc7Q/viewform?usp=sf_link" target="_blank" rel="noopener">コンタクト</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="main-wrapper">
+        <div class="carousel-wrapper">
+
+
+            <div id="canvas-container" class="carousel-item">
+                <p>
+                    このアニメーションは，htmlのcanvasによって描画されています。動画ファイルではありません。
+                    <br />また，カルーセルのシステムはjQuery等のライブラリを用いず，CSSとJavaScriptのみで実現しています。
+                </p>
+                <!-- canvasの属性値としてのw,hでCSS指定ではない。このことによって，canvas内部が1000*500と認識される -->
+                <canvas id="cvs"></canvas>
+            </div>
+
+            <div class="carousel-item top2">
+                <div class="carousel-container">
+                    <div class="box-area">
+                        <div class="link-box">
+                            <h3 class="link-title">SNS</h3>
+                            <ul class="link-list">
+                                <li>
+                                    <a href="" class="twitter">
+                                        <img class="link-icon" src="./images/link-icon/Twitter.png" alt="twitter" />
+                                        Twitter</a>
+                                </li>
+                                <li>
+                                    <a href="" class="facebook"><img class="link-icon"
+                                            src="./images/link-icon/Facebook.png" alt="facebook" />Facebook</a>
+                                </li>
+                                <li><a href="">YouTube</a></li>
+                            </ul>
+                        </div>
+                        <div class="link-box">
+                            <h3 class="link-title">クラウドソーシング</h3>
+                            <ul class="link-list">
+                                <li>
+                                    <a href="" class="cw"><img class="link-icon" src="./images/link-icon/CW.png"
+                                            alt="CW" />クラウドワークス</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="link-box">
+                            <h3 class="link-title">エンジニア関連</h3>
+                            <ul class="link-list">
+                                <li><a href="">GitHub</a></li>
+                                <li><a href="">Qiita</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>ß
+
+            <div class="carousel-item top3">
+                <div class="carousel-container">
+                    <div class="prof-box">
+                        <img class="prof-img-sp" src="./images/pr-mono-sp.png" alt="sp" />
+                        <p class="prof-text">
+                            WEB制作が好きで、個人で請け負っております。
+                            <br>現在はフロントエンド（HTML/CSSのマークアップ、JavaScriptやjQueryでの動的なWebページのプログラミングなど）を行なっております。
+                            <br>バックエンドはNode.jsやRuby+Ruby
+                            on Railsでの開発経験があります。
+                        </p>
+                        <img class="prof-img" src="./images/pr-mono.png" alt="image" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <button class='btn-prev'>前</button>
+    <button class='btn-next'>次</button> -->
+        <div class="btn btn-prev">
+            <i class="fas fa-caret-left fa-3x"></i>
+        </div>
+        <div class="btn btn-next">
+            <i class="fas fa-caret-right fa-3x"></i>
+        </div>
+        <ul id="paging"></ul>
+    </div>
+
+    <!-- 作例 -->
+    <div class="model-wrapper">
+        <h2 class="wrapper-title l">作例</h2>
+        <div class="model-area">
+            <div class="lp">
+                <div class="txt-wrapper">
+                    <div class="txt-block">
+                        <h2 class="l">ランディングページ</h2>
+                        <p class="s">レスポンシブ対応のLPを作成できます</p>
+                        <a href="./lp.html" class="btn-more xs">READ MORE</a>
+                    </div>
+                </div>
+            </div>
+            <div class="design">
+                <div class="filter">
+                    <div class="txt-wrapper">
+                        <div class="txt-block">
+                            <h2 class="l">デザイン</h2>
+                            <p class="s">CSSやJS,jQueryを用いたデザイン</p>
+                            <a href="./design.html" class="btn-more xs">READ MORE</a>
+                        </div>
+                    </div>
+                </div>
+                <ul class="item-list">
+                    <li class="item">
+                        <div class="box jump"></div>
+                    </li>
+                    <li class="item">
+                        <div class="box jump delay1"></div>
+                    </li>
+                    <li class="item">
+                        <div class="box jump delay2"></div>
+                    </li>
+                    <li class="item">
+                        <div class="box jump delay3"></div>
+                    </li>
+                    <li class="item">
+                        <div class="box jump delay4"></div>
+                    </li>
+                </ul>
+                <ul class="item-list">
+                    <li class="item">
+                        <div class="box shake"></div>
+                    </li>
+                    <li class="item">
+                        <div class="box shake delay1"></div>
+                    </li>
+                    <li class="item">
+                        <div class="box shake delay2"></div>
+                    </li>
+                    <li class="item">
+                        <div class="box shake delay3"></div>
+                    </li>
+                    <li class="item">
+                        <div class="box shake delay4"></div>
+                    </li>
+                </ul>
+                <ul class="item-list move-list">
+                    <li class="item">
+                        <div class="box move"></div>
+                    </li>
+                    <li class="item">
+                        <div class="box move delay1"></div>
+                    </li>
+                    <li class="item">
+                        <div class="box move delay2"></div>
+                    </li>
+                    <li class="item">
+                        <div class="box move delay3"></div>
+                    </li>
+                    <li class="item">
+                        <div class="box move delay4"></div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="app">
+                <div class="txt-wrapper">
+                    <div class="txt-block">
+                        <h2 class="l">アプリ</h2>
+                        <p class="s">作成したアプリなど</p>
+                        <a class="btn-more xs">Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- コンタクト＆プライバシー・ポリシー -->
+    <div class="others-wrapper">
+        <div id="contactform" class="other-box">
+            <h4>コンタクト・フォーム</h4>
+            <p class="s">お仕事のご相談や、サイトへの意見などお気軽にご連絡ください</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSenhM26igODtcfldIR5XXBH_gjvZIChtp4bf8toyxo4SHpc7Q/viewform?usp=sf_link" target="_blank" rel="noopener" class="btn-box s">
+                <span class="btn-txt">CONTACT FORM</span>
+                <span class="btn-arr">
+                    <span class="line"></span>
+                    <span class="arr"></span>
+                </span>
+            </a>
+        </div>
+        <div class="other-box">
+            <h4>プライバシー・ポリシー</h4>
+            <p class="s">当サイトの情報の取り扱いや運営について</p>
+            <a href="./privacy.html" class="btn-box s">
+                <span class="btn-txt">PRIVACY POLICY</span>
+                <span class="btn-arr">
+                    <span class="line"></span>
+                    <span class="arr"></span>
+                </span>
+            </a>
+        </div>
+    </div>
+
+    <!-- フッター -->
+    <footer class="xs">
+        <p class="copyright">
+            Copyright &copy; Yuluki All Rights Reserved.
+        </p>
+        <ul class="sns">
+            <li>
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
+                    data-show-count="false">Tweet</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </li>
+            <li>
+                <iframe
+                    src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fnetaro-n.github.io%2Flanding-pages%2FPortfolio%2Findex.html&width=150&layout=button&action=like&size=small&share=true&height=65&appId=765463494333998"
+                    width="150" height="25" style="border: none; overflow: hidden" scrolling="no" frameborder="0"
+                    allowfullscreen="true"
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </li>
+        </ul>
+        <p class="copyright">
+            Designed & Developed by
+            <a href="https://twitter.com/WEB_YulukiTaiga" target="_blank" rel="noopener">ユルキ</a>
+        </p>
+    </footer>
+
+    <!-- 固定のpagetopボタン -->
+    <div id="pagetop" class="pagetop">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </div>
+
+    <script src="./assets/js/carousel.js"></script>
+    <script src="./assets/js/scroll.js"></script>
+    <script src="./assets/js/header.js"></script>
+    <script src="./assets/js/blow.js"></script>
+</body>
+
+</html>

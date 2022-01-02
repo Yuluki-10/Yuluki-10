@@ -1,0 +1,45 @@
+/* サムネール画像は2,560*1,708=1280*854比（≒1.5） */
+
+ul.landing-pages{
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+li.lp-item{
+    border: 1px solid #000;
+
+    width: 30%;
+    margin-bottom: 120px;
+    padding: 10px;
+}
+li.lp-item:nth-child(3n-1){
+    margin-left: 5%;
+    margin-right: 5%;
+}
+li.lp-item img{
+    max-width: 100%;
+    height: auto;
+}
+li.lp-item a{
+    display: block;
+}
+
+@media (max-width: 960px) {
+    li.lp-item{
+        width: 49%;
+    }
+    li.lp-item:nth-child(odd){
+        margin: 0 1% 80px 0;
+    }
+    li.lp-item:nth-child(even){
+        margin: 0 0 80px 1%;
+    }
+}
+@media (max-width: 700px) {
+    li.lp-item{
+        width: 100%;
+        margin: 0 0 60px;
+    }
+}

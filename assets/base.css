@@ -1,0 +1,778 @@
+/* ==========================================================================
+   ベース
+   ========================================================================== */
+
+/* フォントサイズ
+   ========================================================================== */
+html {
+    font-size: 15px;
+}
+/* 520px以降（Tabサイズ）から、88pxごとに1px大きくなる */
+@media (min-width: 520px) {
+    html {
+        font-size: calc(93.75% + 5 * (100vw - 520px) / 440);
+    }
+}
+/* 960px以上（PCサイズ）は、20pxに */
+@media (min-width: 960px) {
+    html {
+        font-size: calc(125%);
+    }
+}
+/* mediaクエリの下に書くことで，レスポンシブ対応 */
+.l {
+    font-size: 1.4rem;
+}
+.s {
+    font-size: 0.8rem;
+}
+.xs {
+    font-size: 0.7rem;
+}
+
+body {
+    /* 「BIZ UDPゴシック」をWindowsで指定 */
+    /* 'Zen Kaku Gothic New'はGoogleフォント */
+    font-family: "Zen Kaku Gothic New", "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", "Meiryo", sans-serif;
+    /* この背景色とボーダーはこのサイト参考（https://bitsofco.de/my-css-reset-base/） */
+    /* background: #f5f5f5; */
+    background-color: #fff;
+    /* マドリーイエロ */
+    border: 5px solid #fcbf00;
+}
+
+@media (max-width: 519px) {
+    body {
+        border-width: 3px;
+    }
+}
+/* ==========================================================================
+   ヘッダー(=>header.css
+   ========================================================================== */
+
+/* ==========================================================================
+   メイン，カルーセル
+   ========================================================================== */
+.main-wrapper {
+    position: relative;
+    margin-top: 65px;
+    transition: margin-top 0.3s;
+}
+.main-wrapper.scroll {
+    margin-top: 33px;
+}
+/* アニメ */
+#canvas-container {
+    background-color: lightslategray;
+    position: relative;
+}
+#canvas-container p {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: rgb(216, 227, 238);
+}
+canvas {
+    /* canvasをhtml要素として高幅を指定することによって背景をレスポンシブにする */
+    width: 100%;
+    /* 高さは固定することで，カルーセルなどで幅だけ可変 */
+    height: 100%;
+    /* background:url(http://www.otwo.jp/blog/demo/canvas/images/web/bg.jpg);
+  background-size: 100% 100%; */
+}
+
+/* 以下カルーセルのデザイン */
+.carousel-item {
+    height: 500px;
+}
+@media (max-width: 1279px) {
+    .carousel-item {
+        height: 400px;
+    }
+}
+@media (max-width: 519px) {
+    .carousel-item {
+        height: 330px;
+    }
+}
+.top1 {
+    background-color: #f1dfc8;
+}
+
+/* 共通コンテナ */
+.carousel-container {
+    /* max-width: 1000px; */
+    /* margin: 0 auto; */
+    display: flex;
+    /* justify-content: center; */
+}
+
+.carousel-wrapper {
+    display: flex;
+    overflow-x: scroll;
+    /* 横軸に対して mandatory が効くようになり, 必ず scroll-snap-align で指定した位置までスクロールして止まる */
+    scroll-snap-type: x mandatory;
+    /* padding-top: 80px;
+  margin-top: -80px; */
+    -ms-overflow-style: none; /* IE, Edge 対応 */
+    scrollbar-width: none; /* Firefox */
+}
+
+.carousel-wrapper .carousel-item {
+    /* padding-top: 80px;
+  margin-top: -80px; */
+    flex: 1 0 auto;
+    width: 100%;
+    /* min-width: 100vw; */
+    scroll-snap-align: start;
+}
+
+.carousel-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+/* prev/nextボタン */
+button {
+    position: absolute;
+    margin: 0px 4px;
+    padding: 8px;
+}
+.btn {
+    position: absolute;
+    cursor: pointer;
+    color: rgb(216, 227, 238);
+}
+.btn-prev {
+    top: 45%;
+    left: 30px;
+}
+.btn-next {
+    top: 45%;
+    right: 30px;
+}
+
+/* インデックスボタン */
+#paging {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    list-style: none;
+}
+#paging li {
+    background-color: rgb(216, 227, 238);
+    margin-right: 10px;
+    width: 50px;
+    height: 5px;
+    cursor: pointer;
+}
+/* 擬似クラスで最後のボタン以外に余白 */
+#paging li:not(:last-child) {
+    margin-right: 43px;
+}
+#paging li.active {
+    background-color: #fcbf00;
+}
+/* ==========================================================================
+リンク一覧.top2 */
+.top2 {
+    /* repeat:no-repeat,position:center */
+    background: url(../images/bgimg/meido.png) no-repeat center;
+    /* 横いっぱい，縦固定 */
+    background-size: 100% 800px;
+    overflow-y: scroll;
+    text-align: center;
+    -ms-overflow-style: none; /* IE, Edge 対応 */
+    scrollbar-width: none; /* Firefox */
+}
+.top2::-webkit-scrollbar {
+    display: none;
+}
+.top2 .carousel-container {
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+.top2 h1 {
+    margin: 20px 0;
+    border-bottom: 2px solid #000;
+}
+.box-area {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.link-box {
+    background-color: #fcbd0017;
+    flex-basis: 30%;
+    color: rgb(216, 227, 238);
+}
+.link-list li {
+    padding: 20px;
+}
+.link-list a {
+    color: #fff;
+    /* border: 1px dotted black; */
+    display: block;
+    /* width: 80%; */
+    margin: 0 auto;
+    border-radius: 4px;
+    opacity: 0.7;
+}
+.link-list a:hover {
+    position: relative;
+    top: -2px;
+    opacity: 1;
+    box-shadow: 0 2px rgba(0, 0, 0, 0.503);
+}
+.link-list a:active {
+    position: relative;
+    top: 0px;
+    box-shadow: none;
+}
+.link-icon {
+    vertical-align: text-bottom;
+    width: 25px;
+    display: inline-block;
+    margin-right: 6px;
+}
+.twitter {
+    background-color: #1d9bf0;
+}
+.facebook {
+    background-color: #1877f2;
+}
+.cw {
+    background-color: #0068b7;
+}
+
+@media (max-width: 768px) {
+    .top2 .carousel-container {
+        flex-direction: row;
+        height: auto;
+    }
+    .top2::-webkit-scrollbar {
+        display: block;
+        background-color: #fff;
+        width: calc(0.6rem + 2px);
+    }
+    .top2::-webkit-scrollbar-track {
+        border-radius: 10px;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+        margin: 1px;
+    }
+    .top2::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 100px;
+        border: solid transparent;
+        background-clip: content-box;
+        border-width: 1px 2px;
+    }
+    .top2::-webkit-scrollbar-thumb:hover {
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 100px;
+        border: solid transparent;
+        background-clip: content-box;
+        border-width: 1px 2px;
+    }
+    .box-area {
+        width: 80%;
+        flex-direction: column;
+        padding: 50px 0;
+    }
+    .link-box {
+        margin-bottom: 10px;
+    }
+}
+/* ==========================================================================
+プロフィール.top3 */
+.top3 {
+    background: url(../images/bgimg/bg-color.png) no-repeat center/cover;
+    color: #fff;
+}
+.top3 .carousel-container {
+    height: 100%;
+    justify-content: center;
+}
+.prof-box {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.prof-img {
+    align-self: flex-end;
+    height: 450px;
+}
+.prof-img-sp {
+    width: 100px;
+    display: none;
+    border: oldlace 1px solid;
+    border-radius: 50%;
+    background-color: #e7dab3;
+}
+.prof-text {
+    max-width: 1000px;
+    text-align: left;
+    padding: 50px 20px;
+    margin: 0 60px;
+    border-radius: 20px;
+    background-color: #000d;
+    line-height: 2;
+}
+@media (max-width: 1279px) {
+    .prof-text {
+        font-size: 16px;
+    }
+    .prof-img {
+        height: 350px;
+    }
+}
+@media (max-width: 600px) {
+    .top3 .carousel-container {
+        justify-content: flex-start;
+    }
+    .prof-text {
+        font-size: 12px;
+        padding: 20px;
+        /* width: 100%; */
+    }
+    .prof-box {
+        flex-direction: column;
+        align-items: center;
+    }
+    .prof-img {
+        display: none;
+    }
+    .prof-img-sp {
+        display: block;
+    }
+}
+
+/* ==========================================================================
+   作例.model-wrapper
+   ========================================================================== */
+.model-wrapper {
+}
+.wrapper-title {
+    margin: 100px auto 30px auto;
+    width: 250px;
+    text-align: center;
+    border-bottom: 4px solid #fcbf00;
+}
+.txt-wrapper {
+    max-width: 1500px;
+    width: 100%;
+    display: flex;
+}
+.txt-block {
+    margin: 100px 50px;
+    padding: 30px;
+    color: #fff;
+}
+.txt-block h2 {
+    margin-bottom: 20px;
+}
+.btn-more {
+    display: block;
+    text-align: center;
+    color: #fff;
+    border: 2px solid #fff;
+    width: 140px;
+    padding: 15px;
+    margin-top: 30px;
+    border-radius: 50px;
+    letter-spacing: 1px;
+}
+.btn-more:hover {
+    background-color: #fff;
+    border: 2px solid #272727;
+    color: #272727;
+}
+.lp {
+    background-image: linear-gradient(to right, transparent, transparent 30%, #000c 65%, #000d), url("../images/bgimg/lp.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+}
+.lp .txt-wrapper {
+    flex-direction: row-reverse;
+}
+
+/* ==========================================================================
+デザインエリア */
+.design {
+    position: relative;
+    /* max-width: 800px; */
+    margin: 0 auto;
+}
+
+.filter {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to left, #efefef, #efefef45 30%, #000c 75%, #000d);
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+}
+
+/* item全体 */
+.item-list {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.box {
+    width: 70px;
+    height: 70px;
+    background: #fff;
+    border: 4px solid #000;
+    border-radius: 20px;
+}
+.move-list .item {
+    overflow: hidden;
+}
+
+@media (max-width: 600px) {
+    .box {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* 各アニメーション設定 */
+.jump {
+    animation: Jump 5s ease-in-out infinite;
+}
+.shake {
+    animation: shake 5s ease-in-out infinite;
+}
+.move {
+    animation: move 5s linear infinite;
+}
+/* ディレイ設定 */
+.delay1 {
+    animation-delay: 0.2s;
+}
+.delay2 {
+    animation-delay: 0.4s;
+}
+.delay3 {
+    animation-delay: 0.6s;
+}
+.delay4 {
+    animation-delay: 0.8s;
+}
+
+/* ジャンプ */
+@keyframes Jump {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    29% {
+        transform: translateY(0) scale(1);
+    }
+    35% {
+        transform: translateY(-20px) scale(0.95, 1.05);
+    }
+    40% {
+        transform: scale(1);
+    }
+    45% {
+        transform: translateY(0) scale(1.1, 0.9);
+    }
+    50% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* シェイク */
+@keyframes shake {
+    0%,
+    52%,
+    78%,
+    100% {
+        transform: translate(0px, 0px) rotateZ(0deg);
+    }
+    54%,
+    60%,
+    66%,
+    72% {
+        transform: translate(3px, 3px) rotateZ(2deg);
+    }
+    56%,
+    62%,
+    68%,
+    74% {
+        transform: translate(0px, 3px) rotateZ(0deg);
+    }
+    58%,
+    64%,
+    70%,
+    76% {
+        transform: translate(3px, 0px) rotateZ(-2deg);
+    }
+}
+
+/* 移動 */
+@keyframes move {
+    0%,
+    80% {
+        margin-left: 0%;
+    }
+    89% {
+        opacity: 1;
+    }
+    90% {
+        margin-left: 100%;
+        opacity: 0;
+    }
+    91% {
+        margin-left: -100%;
+        opacity: 0;
+    }
+    100% {
+        margin-left: 0%;
+        opacity: 1;
+    }
+}
+
+/* ==========================================================================
+appエリア */
+.app {
+    background-image: linear-gradient(to right, #0005, #000a 20%, #000c 65%, #000d), url("../images/bgimg/app.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+}
+.app .txt-wrapper {
+    flex-direction: row-reverse;
+}
+@media (max-width: 959px) {
+    .lp {
+        background-image: linear-gradient(to left, transparent, transparent 30%, #000c 65%, #000d), url("../images/bgimg/lp.jpg");
+        background-position: right;
+    }
+    .app {
+        background-image: linear-gradient(to left, #0005, #000a 20%, #000c 65%, #000d), url("../images/bgimg/app.jpg");
+    }
+    .lp .txt-wrapper,
+    .app .txt-wrapper {
+        flex-direction: row;
+    }
+}
+@media (max-width: 519px) {
+    .model-wrapper {
+    }
+    .model-area {
+    }
+}
+
+/* ==========================================================================
+   コンタクト＆privacyポリシー
+   ========================================================================== */
+.others-wrapper {
+    /* padding: 80px; */
+    text-align: center;
+    background-color: #fcbf00;
+}
+
+@media (max-width: 959px) {
+    .others-wrapper {
+        padding: 60px 20px;
+    }
+}
+@media (max-width: 519px) {
+    .others-wrapper {
+        padding: 20px;
+    }
+}
+
+.other-box {
+    padding: 100px 0;
+}
+.other-box p {
+    margin-top: 15px;
+}
+
+/*-------------------------------------------*/
+/* ボタンデザイン＆アニメーション
+/*-------------------------------------------*/
+.btn-box {
+    border: #000 1px solid;
+    padding: 16px 70px 16px 30px;
+    color: #333;
+    cursor: pointer;
+    display: block;
+    margin: 30px auto 0;
+    position: relative;
+    width: 240px;
+}
+
+/* .btn-box{
+    cursor: pointer;
+    display: block;
+    margin: 40px auto 0;
+    position: relative;
+    width: 240px;
+}
+.btn-container{
+    border: #000 1px solid;
+    display: block;
+    padding: 16px 70px 16px 30px;
+    position: relative;
+} */
+
+.btn-box:before {
+    -webkit-transition: all 0.3s;
+    background-color: #000000;
+    content: "";
+    display: block;
+    height: 100%;
+    left: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all 0.3s;
+    width: 0;
+}
+
+.btn-box .btn-txt {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    position: relative;
+    z-index: 3;
+}
+
+.btn-box .btn-arr {
+    position: absolute;
+    right: 13%;
+    top: 43%;
+    width: 20px;
+    z-index: 2;
+}
+
+.btn-box .btn-arr .line {
+    -webkit-transition: all 0.2s;
+    background-color: #000000;
+    display: block;
+    height: 2px;
+    position: relative;
+    top: 4px;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.btn-box .btn-arr .arr {
+    -webkit-transition: all 0.2s;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #000;
+    border-top: 5px solid transparent;
+    display: block;
+    height: 8px;
+    position: absolute;
+    right: -3px;
+    top: 0;
+    transition: all 0.2s;
+    width: 4px;
+}
+
+.btn-box:hover {
+    color: #fff;
+}
+
+.btn-box:hover .line {
+    background-color: #fff;
+}
+
+.btn-box:hover .arr {
+    border-left: 5px solid #fff;
+}
+
+.btn-box:hover:before {
+    left: 0;
+    right: auto;
+    width: 100%;
+}
+
+/* ==========================================================================
+   footer
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 40px 0;
+}
+footer p {
+    margin-bottom: 20px;
+}
+footer .sns {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.sns li:not(:last-child) {
+    margin-right: 15px;
+}
+
+/* ==========================================================================
+   
+   ========================================================================== */
+.pagetop {
+    position: fixed;
+    cursor: pointer;
+    z-index: 8;
+    bottom: 90px;
+    right: 50px;
+    background-color: #ececec;
+    padding: 20px;
+    font-size: 30px;
+}
+.pagetop .fas {
+    /* 親要素の高さを揃えるため */
+    display: block;
+}
+@media screen and (max-width: 768px) {
+    .pagetop {
+        bottom: 20px;
+        right: 10px;
+        padding: 15px;
+        font-size: 15px;
+    }
+}
+
+/* ==========================================================================
+   privacy.html
+   ========================================================================== */
+
+.privacy-policy-wrapper {
+    padding: 20px 100px;
+}
+.privacy-policy-wrapper .wrapper-title {
+    width: 400px;
+}
+.privacy-policy-wrapper h3{
+    margin-top: 40px;
+}
+.privacy-policy-wrapper p{
+    text-indent: 1em;
+
+}
+
+@media(max-width:600px){
+    .privacy-policy-wrapper {
+        padding: 15px 50px;
+    }
+    .privacy-policy-wrapper .wrapper-title {
+        width: 300px;
+    }
+}

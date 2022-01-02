@@ -1,0 +1,150 @@
+ul.design-items {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+li.d-item {
+    border: 1px solid #000;
+    /* position: relative; */
+    width: 30%;
+    margin-bottom: 120px;
+    padding: 5px 10px 50px;
+}
+li.d-item:nth-child(3n-1) {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+li.d-item img {
+    max-width: 100%;
+    height: auto;
+}
+li.d-item a {
+    display: block;
+}
+
+@media (max-width: 960px) {
+    li.d-item {
+        width: 49%;
+    }
+    li.d-item:nth-child(odd) {
+        margin: 0 1% 80px 0;
+    }
+    li.d-item:nth-child(even) {
+        margin: 0 0 80px 1%;
+    }
+}
+@media (max-width: 700px) {
+    li.d-item {
+        width: 100%;
+        margin: 0 0 60px;
+    }
+}
+
+/* 中身 */
+.subTitle {
+    /* font-size: 14px; */
+    display: inline-block;
+    line-height: 1;
+    font-weight: normal;
+    background: #fff;
+    border: solid 1px #4169e1;
+    color: #4169e1;
+    padding: 5px;
+    margin-bottom: 50px;
+    /* position: absolute; */
+    /* left: 1rem; */
+    /* top: 1rem; */
+}
+
+/* transitionの練習 */
+
+.transition {
+    width: 200px;
+    line-height: 50px;
+    border-radius: 5px;
+    background: skyblue;
+    color: #fff;
+    text-align: center;
+    margin: auto;
+    /* ここからtransitionを追加 */
+    transition: 300ms;
+}
+
+.transition:hover {
+    transform: scale(1.2, 1.2);
+}
+
+/* animation-loading */
+
+.loading {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    /* ここからanimationを追加 */
+    animation: loading-animation 1s ease-in-out infinite;
+}
+
+@keyframes loading-animation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* animationの練習2 */
+
+.buruburu-text {
+    text-align: center;
+    /* ここからanimationを追加 */
+    animation: buruburu-animation 0.1s infinite;
+}
+
+@keyframes buruburu-animation {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    25% {
+        transform: translate(3px, 3px);
+    }
+    50% {
+        transform: translate(0px, 3px);
+    }
+    75% {
+        transform: translate(3px, 0px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+
+/* linear-gradientの練習 */
+.linear-gradient{
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  /* ここからlinear-gradientを追加 */
+  background: linear-gradient(to bottom, #b8e1fc 0%,#a9d2f3 10%,#90bae4 25%,#90bcea 37%,#90bff0 50%,#6ba8e5 51%,#a2daf5 83%,#bdf3fd 100%);
+}
+
+/* radial-gradientの練習 */
+.radial-gradient{
+    width: 250px;
+    height: 250px;
+  margin: 0 auto;
+  /* radial-gradientを追加 */
+  background: radial-gradient(circle,red, orange, yellow, green, blue, indigo, violet);
+}
+
+/* text-shadowの練習*/
+.text-shadow{
+  text-align: center;
+  font-weight: bold;
+  margin: auto;
+  /* ここからtext-shadowプロパティを追加 */
+  text-shadow: 3px 3px 0px rgba(255, 0, 0, 0.3)
+}
