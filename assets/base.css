@@ -248,6 +248,9 @@ button {
 .cw {
     background-color: #0068b7;
 }
+.github{
+    background-color: #161B22;
+}
 
 @media (max-width: 768px) {
     .top2 .carousel-container {
