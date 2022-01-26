@@ -1,0 +1,77 @@
+*, *:before, *:after {
+  box-sizing: border-box; 
+}
+html {
+  font-size: 13px;
+}
+body {
+  font-family: Avenir, "Open Sans", "Helvetica Neue", Helvetica, Arial, Verdana, Roboto, "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  color: #444;
+  background-color: hsl(0, 0%, 96%);
+  margin: 0px;
+}
+h1 {
+  font-size: 1.8rem;
+}
+
+
+/* 以下カルーセルのデザイン */
+.top-wrapper{
+  height: 710px;
+}
+.top1{
+  background-color: #f1dfc8;
+}
+.top2{
+  background-color: lightseagreen;
+}
+/* 共通コンテナ */
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.circle{
+  height: 710px;
+  width: 388px;
+  background-color: #f4f4f4;
+  /* 上から550px下ったところを中心にして、横幅は左右50%（全体に）、縦は上に491pxのところまで引き伸ばす。中心が真ん中より下にあるので、楕円の下方あたりは存在しない。 */
+  clip-path: ellipse(50% 491px at 50% 550px);
+  cursor: pointer;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: scroll;
+  /* 横軸に対して mandatory が効くようになり, 必ず scroll-snap-align で指定した位置までスクロールして止まる */
+  scroll-snap-type: x mandatory;
+}
+
+.carousel img {
+  flex: 1 0 auto;
+  width: 100vw;
+  height: 60vh;
+  object-fit: cover;
+  scroll-snap-align: start;
+}
+.carousel .top-wrapper {
+  flex: 1 0 auto;
+  width: 100vw;
+  height: 60vh;
+  scroll-snap-align: start;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+}
+
+.btns button {
+  margin: 0px 4px;
+}

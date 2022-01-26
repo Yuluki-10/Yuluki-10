@@ -1,0 +1,249 @@
+/* 本来は"Helvetica Neue",Arial, も足すのが無難。参照⇒（https://ics.media/entry/200317/）*/
+body {
+  font-family: 
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+}
+.container{
+  position: relative;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+.top-wrapper .container{
+  display: flex;
+  justify-content: center;
+}
+.top-wrapper{
+  height: 800px;
+  background-color: #f6f7f9;
+}
+.logo{
+  position: absolute;
+  top: 32px;
+  left: 30px;
+}
+.logo a{
+  font-size: 40px;
+  font-family: serif;
+  color: black;
+
+}
+.info-box{
+  position: absolute;
+  top: 30px;
+  right: 26px;
+  text-align: right;
+}
+.tel{
+  font-size: 30px;
+  font-weight: 600;
+  color:rgb(255,101,170);
+}
+.reception-hours{
+  font-size: 14px;
+}
+.reception-hours span{
+  margin-left: 1em;
+  font-size: 16px;
+}
+
+/* ------------------------------------------main-box */
+.main-box{
+  position: relative;
+  margin-top: 203px;
+  margin-left: 140px;
+}
+.subtitle{
+  font-size: 42px;
+  font-weight: 600;
+  color:rgb(255,101,170);
+}
+.title{
+  font-size: 105px;
+  background: linear-gradient(0deg, rgb(246,195,20) 0%, rgb(255,101,170) 100%);
+  background: -webkit-linear-gradient(0deg, rgb(246,195,20) 0%, rgb(255,101,170) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+/*IEで未対応の場合は以下で背景を非表示に*/
+@media all and (-ms-high-contrast:none){
+  .title {
+    background: #fff;
+    color: rgb(255,101,170);
+  }
+}
+.backtitle{
+  position: absolute;
+  left: -140px;
+  top: -96px;
+  width: 774px;
+  height: 159px;
+}
+.super-fast{
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.entry-box{
+  display: flex;
+}
+.two-months{
+  font-size: 33px;
+  color:rgb(255,101,170);
+}
+.btn{
+  border: 0;
+  border-radius: 100vh; /*要素いっぱいの角丸*/
+  cursor: pointer;
+  background: linear-gradient(0deg, rgb(246,195,20) 0%, rgb(255,101,170) 100%);
+  background: -webkit-linear-gradient(0deg, rgb(246,195,20) 0%, rgb(255,101,170) 100%);
+  width: 514px;
+  height: 64px;
+  font-size: 25px;
+  color: #fff;
+}
+/* 満足度 */
+.satisfaction-label{
+  background-color: rgb(255,101,170);
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+.inner{
+  height: auto;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+.satisfaction{
+  font-size: 24px;
+  color: #fff;
+  font-weight: 600;
+}
+.percentage{
+  line-height: 1;
+  font-size: 89px;
+  font-weight: 600;
+  color: #fff;
+}
+/* 縁取り */
+svg {
+  position: absolute;
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  overflow: visible;
+}
+.foreground {
+  fill: #fff;
+  font-size: 26px;
+}
+.background {
+  stroke: rgb(255,101,170);
+  stroke-width: 8;
+  stroke-linejoin: round;
+  font-size: 26px;
+
+}
+
+/* ------------------------------------------model-box */
+.model-box{
+  margin-left: 55px;
+  margin-right: 40px;
+}
+
+.elipse{
+  height: 800px;
+  width: 382px;
+  background-color: #f1dfc8;
+  /* 上から500px下ったところを中心にして、横幅は左右50%（全体に）、縦は上に460pxのところまで引き伸ばす。中心が真ん中より下にあるので、楕円の下方あたりは存在しない。 */
+  clip-path: ellipse(50% 460px at 50% 500px);
+  cursor: pointer;
+}
+
+/* ------------------------------------------縦書き */
+.text-box{
+  margin-top: 307px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+}
+.vertical{
+  /*以下縦書きの設定*/
+  -webkit-writing-mode:vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  font-size: 24px;
+  font-family: serif;
+  color: rgb(255,101,170);
+  /* 角度をつける */
+  transform: rotate(8deg);
+  padding-top: 1em;
+  text-indent: -1em;
+}
+
+/* ------------------------------------------Whyエリア */
+.why-wrapper{
+  text-align: center;
+  height: 400px;
+  background-image: url(./img/bg.jpg);
+}
+.overtext{
+  position: absolute;
+  top: -33px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.method{
+  padding-top: 50px;
+  margin-bottom: 30px;
+  font-size: 43px;
+  font-weight: 600;
+}
+
+/* Box */
+.sales-box{
+  display: flex;
+  justify-content: center;
+}
+.sales-label:not(:last-child){
+  margin-right: 110px;
+}
+.outside{
+  position: relative;
+  width: 210px;
+  height: 210px;
+  background-image: -webkit-linear-gradient( -45deg, rgb(104,87,36) 0%, rgb(147,120,65) 33%, rgb(189,152,93) 51%, rgb(147,120,65) 68%, rgb(104,87,36) 99%);
+  border-radius: 50%;
+}
+.inside{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-width: 1px;
+  border-color: rgb(194, 175, 129);
+  border-style: solid;
+  border-radius: 50%;
+  width: 195px;
+  height: 195px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.sub{
+  font-size: 21px;
+  color: #fff;
+}
+.main{
+  font-size: 34px;
+  color: #fff;
+  font-weight: 600;
+}

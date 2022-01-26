@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LP</title>
+  <!-- ウェブフォントとして，Googleのマテリアルアイコンを用いる（https://google.github.io/material-design-icons/#icon-font-for-the-web） -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./header.css">
+  <!-- jQuery Google CDN（2021/05/08時点） -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- font-awesome (2021/05/08時点，製作者のアカウントKIT使用) -->
+  <script src="https://kit.fontawesome.com/940545e56d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <h1>LP</h1>
+    </div>
+
+    <div class="pc-menu">
+      <nav>
+        <ul>
+          <li><a href="#">TOP</a></li>
+          <li><a href="#">ブログ一覧</a></li>
+          <li><a href="#">コンタクト</a></li>
+          <li><a href="#">SNS</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="sp-menu">
+      <span class="material-icons" id="open">menu</span>
+    </div>
+  </header>
+
+  <div class="overlay">
+    <span class="material-icons" id="close">close</span>
+    <nav>
+      <ul>
+        <ul>
+          <li><a href="#">TOP</a></li>
+          <li><a href="#">ブログ一覧</a></li>
+          <li><a href="#">コンタクト</a></li>
+          <li><a href="#">SNS</a></li>
+        </ul>
+      </ul>
+    </nav>
+  </div>
+
+
+  <main>
+    <div class="top">
+      <h1>トップページ</h1>
+    </div>
+    <div class="special">
+      <h2 class="content-title">コンテンツ</h2>
+      <div class="carousel-wrapper">
+        <div class="special-carou-item carousel-item">
+          <div class="filter brown-filter">
+          </div>
+          <div class="item">
+            <p>コンテンツ①</p>
+            <h3>サンプルテキスト</h3>
+            <p>サンプルテキスト<br>サンプルテキスト</p>
+            <div class="read-more">コンテンツ①についてもっと見る</div>
+          </div>
+        </div>
+        <div class="special-carou-item carousel-item">
+          <div class="filter brown-filter">
+          </div>
+          <div class="item">
+            <p>コンテンツ①</p>
+            <h3>サンプルテキスト</h3>
+            <p>サンプルテキスト<br>サンプルテキスト</p>
+            <div class="read-more">コンテンツ①についてもっと見る</div>
+          </div>
+        </div>
+        <div class="special-carou-item carousel-item">
+          <div class="filter brown-filter">
+          </div>
+          <div class="item">
+            <p>コンテンツ①</p>
+            <h3>サンプルテキスト</h3>
+            <p>サンプルテキスト<br>サンプルテキスト</p>
+            <div class="read-more">コンテンツ①についてもっと見る</div>
+          </div>
+        </div>
+
+      </div>
+      <ul id="paging"></ul>
+    </div>
+    <div class="knowledge">
+      <div class="knowledge-visual">
+        <img src="./assets/knowledge.jpg" alt="">
+      </div>
+      <div class="knowledge-text">
+        <h2>ソリューション</h2>
+        <ul class="pc-list">
+          <li>- Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+          <li>- Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+          <li>- Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+          <li>- Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+          <li>- Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+          
+        </ul>
+        <div class="sp-list">
+          <ul class="sp-list-first">
+            <li>- Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+            <li>- Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+            <li>- Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+            <li>- Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+          </ul>
+          <div class="accordion">⋮</div>
+          <ul class="sp-list-after">
+            <li>- Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+            <li>- Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+            <li>- Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+            <li>- Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+            <li>- Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+            <li>- Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="service">
+      <h2 class="content-title">service</h2>
+      <div class="carousel-wrapper2">
+        <div class="service-carou-item carousel-item">
+          <div class="filter blue-filter">
+          </div>
+          <div class="item">
+            <p>サービス①</p>
+            <h3>―&nbsp;サンプル&nbsp;―</h3>
+            <p>サンプルテキスト<br>サンプルテキスト<br>サンプルテキスト</p>
+            <div class="read-more">ReadMore</div>
+          </div>
+        </div>
+        <div class="service-carou-item carousel-item">
+          <div class="filter blue-filter">
+          </div>
+          <div class="item">
+            <p>サービス①</p>
+            <h3>―&nbsp;サンプル&nbsp;―</h3>
+            <p>サンプルテキスト<br>サンプルテキスト<br>サンプルテキスト</p>
+            <div class="read-more">ReadMore</div>
+          </div>
+        </div>
+        <div class="service-carou-item carousel-item">
+          <div class="filter blue-filter">
+          </div>
+          <div class="item">
+            <p>サービス①</p>
+            <h3>―&nbsp;サンプル&nbsp;―</h3>
+            <p>サンプルテキスト<br>サンプルテキスト<br>サンプルテキスト</p>
+            <div class="read-more">ReadMore</div>
+          </div>
+        </div>
+
+      </div>
+      <ul id="paging2"></ul>
+    </div>
+    <div class="banner">
+      <div class="price-banner">
+        <h2 class="content-title">サンプルプライス</h2>
+        <img src="./assets/banner.png" alt="" class="pc-banner">
+        <img src="./assets/banner-sp.png" alt="" class="sp-banner">
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="service-form">
+      <div class="filter blue-filter">
+      </div>
+      <p>サービスのお申し込みは<br>こちらのフォームからご利用いただけます。</p>
+      <div class="service-form-btn">サービスお申し込みフォーム</div>
+    </div>
+
+    <div class="contact-form">
+      <div class="filter white-filter">
+      </div>
+      <p>まずはお気軽にお問い合わせください。<br>専門スタッフが対応させていただきます。</p>
+      <div class="contact-form-btn">お問い合わせフォーム</div>
+      <p class="xs">お電話でのお問い合わせ<br>受付時間&nbsp;0:00〜00:00／X曜日定休</p>
+      <p class="tel">000-0000-0000</p>
+    </div>
+
+    <div class="sns">
+      <div class="filter blue-filter">
+      </div>
+      <p>公式SNSアカウント</p>
+      <div class="icon-area">
+        <img src="./assets/facebook.png" alt="" class="facebook">
+        <img src="./assets/twitter.png" alt="" class="twitter">
+        <i class="fab fa-instagram fa-2x"></i>
+      </div>
+      <h2 class="footer-title">ハワイビジネス情報館</h2>
+      <p class="copy"> Copyright &copy; hawaii business Information center</p>
+    </div>
+  </footer>
+
+  <!-- 固定のpagetopボタン -->
+  <div id="pagetop" class="pagetop">
+    <i class="fas fa-chevron-up" aria-hidden="true"></i>
+  </div>
+
+  <script src="./main.js"></script>
+  <script src="./carousel.js"></script>
+  <script src="./jquery.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,310 @@
+/* 
+茶背景
+background-color:#A7907D
+
+*/
+
+body{
+  font-family: '游明朝体+36ポかな','YuMincho +36p Kana','ヒラギノ明朝 ProN','Hiragino Mincho ProN','ＭＳ Ｐ明朝','MS PMincho','Yu Mincho Light','YuMincho','Yu Mincho','游明朝体',serif;
+  text-align: center;
+}
+h1{
+  font-size: x-large;
+}
+
+main {
+  margin-top: 64px;
+}
+.content-title{
+  text-align: left;
+}
+.filter{
+  position: absolute;
+  opacity: 0.5;
+  height: 100%;
+  width: 100%;
+  z-index: -5;
+}
+.brown-filter{
+  background: #a7907d;
+}
+.blue-filter{
+  background: linear-gradient(#1d63b5 0%, #0f325b 100%);
+}
+.white-filter{
+  background: linear-gradient(#f6fafe, #969595);
+  opacity: 0.9;
+}
+
+/* ───────────────────────カルーセル────────────────────────────────────── */
+.carousel-wrapper,.carousel-wrapper2 {
+  display: flex;
+  overflow-x: scroll;
+  /* 横軸に対して mandatory が効くようになり, 必ず scroll-snap-align で指定した位置までスクロールして止まる */
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;    /* IE, Edge 対応 */
+  scrollbar-width: none; /* Firefox */
+}
+
+.carousel-item {
+  flex: 1 0 auto;
+  width: 100%;
+  /* min-width: 100vw; */
+  scroll-snap-align: start;
+}
+
+.carousel-wrapper::-webkit-scrollbar,.carousel-wrapper2::-webkit-scrollbar {
+  display: none;
+}
+
+.item{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* インデックスボタン */
+#paging {
+  padding: 0;
+  margin: 0;
+  display: flex;
+	position: absolute;
+	bottom:10px;
+  left: 50%;
+  transform: translate(-50%,0%);
+  list-style: none;
+}
+#paging2{
+  padding: 0;
+  margin: 0;
+  display: flex;
+	position: absolute;
+	bottom:30px;
+  left: 50%;
+  transform: translate(-50%,0%);
+  list-style: none;
+}
+#paging li, #paging2 li{
+  pointer-events: auto;
+  cursor: pointer;
+  background-color: rgb(216, 227, 238);
+  margin-right: 10px;
+	width:20px;
+	height:20px;
+  border-radius: 50%;
+}
+/* 擬似クラスで最後のボタン以外に余白 */
+#paging li:not(:last-child),#paging2 li:not(:last-child){
+  margin-right: 43px;
+}
+#paging li.active,#paging2 li.active{
+  background-color: lightslategray;
+}
+
+
+
+
+
+
+
+/* top */
+.top{
+  background-image: url(./assets/top.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  height: 340px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media(max-width:800px){
+  .top{
+    height: 130px;
+  }
+}
+
+/* special */
+.special{
+  position: relative;
+  margin: 110px;
+}
+.special-carou-item{
+  background-image: url(./assets/business.jpg);
+  background-size: cover;
+  color: #fff;
+  height: 480px;
+  position: relative;
+  z-index: -10;
+}
+
+
+/* knowledge */
+.knowledge{
+  background-color: #A7907D;
+  padding: 110px;
+  display: flex;
+  justify-content:space-evenly;
+  text-align: left;
+  color: #fff;
+}
+.knowledge-visual{
+  width: 40%;
+}
+.sp-list{
+  display: none;
+  width: 480px;
+  margin: 0 auto;
+}
+.sp-list-after{
+  display: none;
+}
+@media (max-width:800px){
+  .knowledge{
+    padding: 25px;
+  }
+  .knowledge-visual{
+    display: none;
+  }
+  .pc-list{
+    display: none;
+  }
+  .sp-list{
+    display: block;
+  }
+}
+
+/* service */
+.service{
+  margin: 110px;
+  position: relative;
+}
+.service-carou-item{
+  background-image: url(./assets/service.jpg);
+  background-size: cover;
+  color: #fff;
+  height: 480px;
+  position: relative;
+  z-index: -10;
+}
+
+@media (max-width:800px){
+  .special,.service{
+    margin: 30px 0;
+  }
+  .carousel-item{
+    margin: 0 10px;
+    width: 80%;
+    scroll-snap-align: center;
+    height: 270px;
+  }
+  .carousel-item:first-child{
+    margin-left: 10%;
+  }
+  .carousel-item:last-child{
+    margin-right: 10%;
+  }
+}
+
+/* banner */
+.banner{
+  margin-bottom: 110px;
+}
+.price-banner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sp-banner{
+  display: none;
+}
+@media (max-width:800px){
+  .pc-banner{
+    display: none;
+  }
+  .sp-banner{
+    display: block;
+  }
+}
+
+
+
+
+/* footer */
+
+/* service-form */
+.service-form{
+  position: relative;
+  z-index: -10;
+  background-image: url(./assets/service-form.jpg);
+  background-size: cover;
+  background-position:bottom;
+  height: 334px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* contact-form */
+.contact-form{
+  position: relative;
+  z-index: 10;
+  background-image: url(./assets/contact-form.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* sns */
+.sns{
+  position: relative;
+  z-index: -10;
+  background-image: url(./assets/footer.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 238px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.icon-area{
+  display: flex;
+  justify-content: center;
+}
+.icon-area img{
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+}
+
+
+/* pagetop */
+.pagetop{
+  position: fixed;
+  cursor: pointer;
+  bottom: 90px;
+  right: 50px;
+  background-color: #ececec;
+  padding: 20px;
+  font-size: 30px;
+}
+.pagetop .fas{
+  /* 親要素の高さを揃えるため */
+  display: block;
+}
+@media screen and (max-width: 768px){
+  .pagetop{
+    bottom: 20px;
+    right: 10px;
+    padding: 15px;
+    font-size: 15px;
+  }
+}

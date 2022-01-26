@@ -1,0 +1,192 @@
+/* 共通設定 */
+* {
+  box-sizing: border-box;
+}
+body{
+  margin: 0 10px;
+}
+.container{
+  max-width: 1200px;
+  text-align: center;
+  margin: 0 auto;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+dt,dd{
+  margin: 0;
+}
+/* header */
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left{
+  padding: 30px 32px;
+}
+.title{
+  font-family: Helvetica, sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: 0.028em;
+  color: #029ae2;
+}
+.title > span{
+  color: #30d0ed;
+  margin-left: 5px;
+}
+
+.header-right{
+  font-family: 'Hiragino Kaku Gothic ProN-W6','ヒラギノ角ゴ ProN W6',sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.857142857;
+  letter-spacing: 0.05em;
+  color: #333333;
+}
+.header-right ul{
+  display: flex;
+  align-items: baseline;
+  margin: 0;
+}
+
+.header-right ul li {
+  margin-right: 50px;
+  cursor: pointer;
+}
+
+/* 上のmr50をキャンセルするため必ず「子孫セレクタ指定」「下に記述」 */
+.header-right ul .contact{
+  padding: 35px 50px 32px 50px;
+  margin-right: 0;
+  margin-left: 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #30d0ed;
+}
+/* top-wrapper */
+.top-wrapper{
+  background-image: url(./bgimg.jpg);
+  background-size: cover;
+  padding: 150px 0 200px 0;
+}
+.top-wrapper h1{
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 140px;
+  font-weight: normal;
+  line-height: 0.821428571;
+  letter-spacing: 0.025em;
+  color: #fefefe;
+}
+.top-wrapper p{
+  font-family: 'Hiragino Kaku Gothic ProN-W6','ヒラギノ角ゴ ProN W6',sans-serif;
+  font-size: 25px;
+  font-weight: normal;
+  line-height: 1.44;
+  letter-spacing: 0.1em;
+  color: #fefefe;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+/* News */
+.news-wrapper{
+  padding: 40px 0 60px 0;
+  background-color: #edfcff;
+}
+.news-wrapper .container{
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+}
+.heading h2{
+  font-family: 'Open Sans','Hiragino Kaku Gothic ProN-W6','ヒラギノ角ゴ ProN W6',sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: 0.025em;
+  color: #019bdf;
+  margin-bottom: 17px;
+}
+.heading p{
+  font-family: 'Hiragino Kaku Gothic ProN-W3','ヒラギノ角ゴ ProN W3',sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 2;
+  letter-spacing: 0.075em;
+  color: #333333;
+}
+.heading p span{
+  margin-left: 5px;
+}
+.news{
+  width: 90%;
+  margin-left: 43px;
+}
+.news-item{
+  display: flex;
+  align-items: baseline;
+  border-bottom: 1px solid #93deff;
+  letter-spacing: 0.075em;
+  color: #333333;
+  padding-bottom: 15px;
+}
+/* 擬似クラスで最初の要素以外を選択している */
+.news-item:nth-of-type(n+2){
+  margin-top: 15px;
+}
+.n-date,.n-content{
+  font-family: 'Hiragino Kaku Gothic ProN-W3','ヒラギノ角ゴ ProN W3',sans-serif;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 1.846153846;
+}
+.n-tag{
+  font-size: 10px;
+  font-family: 'Hiragino Kaku Gothic ProN-W6','ヒラギノ角ゴ ProN W6',sans-serif;
+  color: #fff;
+  margin-left: 25px;
+  line-height: 2;
+  width: 80px;
+  height: 19px;
+  background-color: #019bdf;
+  text-align: center;
+}
+.n-content{
+  margin-left: 25px;
+}
+
+/* Sevice */
+.service-wrapper{
+  padding: 80px 0;
+}
+.service-wrapper .heading h2{
+  margin-bottom: 10px;
+}
+.heading h3{
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 2;
+  letter-spacing: 0.075em;
+  color: #149fe0;
+  margin-bottom: 20px;
+}
+h3 > span{
+  margin-left: 5px;
+}
+.services {
+  display: flex;
+  justify-content: space-between;
+}
+.service-item{
+  width: 380px;
+  height: 380px;
+  background-color: #e8e8e8;
+}
