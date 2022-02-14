@@ -304,7 +304,6 @@ button {
     justify-content: center;
 }
 .prof-box {
-    text-align: center;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -362,6 +361,11 @@ button {
    作例.model-wrapper
    ========================================================================== */
 .model-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.model-area{
+    padding: 20px 20px 80px 20px;
 }
 .wrapper-title {
     margin: 100px auto 30px auto;
@@ -409,12 +413,13 @@ button {
     flex-direction: row-reverse;
 }
 
+
 /* ==========================================================================
 デザインエリア */
 .design {
     position: relative;
     /* max-width: 800px; */
-    margin: 0 auto;
+    margin: 80px auto;
 }
 
 .filter {
@@ -577,9 +582,11 @@ appエリア */
     }
 }
 @media (max-width: 519px) {
-    .model-wrapper {
-    }
     .model-area {
+        padding-bottom: 30px;
+    }
+    .lp, .design{
+        margin-bottom: 30px;
     }
 }
 
