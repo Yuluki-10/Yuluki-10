@@ -83,7 +83,7 @@ canvas {
 
 /* 以下カルーセルのデザイン */
 .carousel-item {
-    height: 500px;
+    height: 800px;
 }
 @media (max-width: 1279px) {
     .carousel-item {
